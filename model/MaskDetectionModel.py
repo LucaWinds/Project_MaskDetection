@@ -1,3 +1,6 @@
+# NOT USING NOW
+# 멍청한 과거의 내 자신의 전유물
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import os
@@ -10,14 +13,14 @@ validation_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1/2
 train_generator = train_datagen.flow_from_directory(
   '../dataset/data/train',
   target_size=(128, 128),
-  batch_size=512,
+  batch_size=64,
   class_mode='binary'
 )
 
 validation_generator = validation_datagen.flow_from_directory(
   '../dataset/data/validation',
   target_size=(128, 128),
-  batch_size=512,
+  batch_size=64,
   class_mode='binary'
 )
 
@@ -62,27 +65,27 @@ model.compile(optimizer=tf.keras.optimizers.Adam(lr=0.0001),
 
 model.summary()
 
-history = model.fit_generator(
-  train_generator,
-  validation_data=validation_generator,
-  steps_per_epoch=8,
-  epochs=25,
-  verbose=1
-)
+history = model.fit(train_generator, epochs=15)
+test_history = model.fit(validation_generator)
+
+model.save('maskmodel.h5')
 
 plt.figure(figsize=(12, 4))
 
 plt.subplot(1, 2, 1)
 plt.plot(history.history['loss'], 'b-', label='loss')
-plt.plot(history.history['val_loss'], 'r--', label='val_loss')
+#plt.plot(history.history['val_loss'], 'r--', label='val_loss')
 plt.xlabel('Epoch')
 plt.legend()
 
 plt.subplot(1, 2, 2)
-plt.plot(history.history['accuracy'], 'g-', label='loss')
-plt.plot(history.history['val_accuracy'], 'k--', label='val_loss')
+plt.plot(history.history['accuracy'], 'g-', label='acc')
+#plt.plot(history.history['val_accuracy'], 'k--', label='val_acc')
 plt.xlabel('Epoch')
 plt.ylim(0.7, 1)
 plt.legend()
 
 plt.show()
+
+
+
