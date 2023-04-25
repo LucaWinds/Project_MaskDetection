@@ -16,10 +16,12 @@ to determine whether the mask is worn or not.
 2. after you got the result, press 'q' to exit. <br>
 
 **Referance**
+
 I used yunet detector to find faces. <br>
 * https://gist.github.com/UnaNancyOwen/3f06d4a0d04f3a75cc62563aafbac332
 
 **Dataset** 
+
 * https://github.com/chandrikadeb7/Face-Mask-Detection
 * https://www.kaggle.com/datasets/prithwirajmitra/covid-face-mask-detection-dataset
 * https://www.kaggle.com/datasets/andrewmvd/face-mask-detection?select=images
