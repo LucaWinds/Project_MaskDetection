@@ -1,4 +1,8 @@
-# Project_MaskDetection <br>
+# MaskDetection Project
+
+* Virtual Env Name - Conda : Project_MaskDetection
+<br>
+<br>
 * Development of mask wearing detection model using CNN <br>
 
 * For GSA infomatics science project. <br>
@@ -8,6 +12,7 @@
 1. Using CNN artificial neural network for model training. <br>
 2. When the file is executed, the location of the face is automatically determined<br>
 to determine whether the mask is worn or not.
+3. Can detect many people at once.
 
 **How to use?**
 
